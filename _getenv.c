@@ -1,36 +1,26 @@
 #include "shell.h"
-
 /**
- * exit_shell - This will run the builtin exit
- * @line: Line buffer of user input
- * @args: Arguments from user
- * @env: Environment
- * Return: Void
+ * _getenv - gets env of input
+ * @env: input
+ * Return: env without =
  */
-void exit_shell(char **args, char *line, char **env)
+char *_getenv(char *env)
 {
-	free(args);
-	free(line);
-	(void)env;
-	exit(0);
-}
-/**
- * env_shell - Prints shell environment
- * @args: Arguments split from cmdline
- * @line: User input buffer
- * @env: Environment
- */
-void env_shell(char **args, char *line, char **env)
-{
-	int size, i = 0;
+	int i = 0, n = 0;
+	char *temp, *res;
 
-	while (env[i] != NULL)
+	while (environ[i] != NULL)
 	{
-		size = _strlen(env[i]);
-		write(1, env[i], size);
-		write(1, "\n", 1);
+		if (_strcmp(environ[i], env) == 0)
+			temp = environ[i];
 		i++;
 	}
-	(void)args;
-	(void)line;
+
+	while (temp[n] != '\0')
+	{
+		if (_strcmp(temp, env) == 0)
+			res = _strstr(temp, "/");
+		n++;
+	}
+	return (res);
 }
