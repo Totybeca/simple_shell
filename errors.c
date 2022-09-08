@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- *_eputs - prints an input string
- * @str: the string to be printed
+ *_eputs - Prints an input string
+ * @str: The string to be printed
  *
  * Return: Nothing
  */
@@ -65,11 +65,11 @@ int _putfd(char c, int fd)
 }
 
 /**
- *_putsfd - prints an input string
- * @str: the string to be printed
- * @fd: the filedescriptor to write to
+ *_putsfd - Prints an input string
+ * @str: The string to be printed
+ * @fd: The filedescriptor to write to
  *
- * Return: the number of chars put
+ * Return: The number of chars put
  */
 int _putsfd(char *str, int fd)
 {
